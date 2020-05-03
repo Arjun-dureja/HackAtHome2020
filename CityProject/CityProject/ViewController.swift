@@ -9,7 +9,7 @@
 import MapKit
 import UIKit
 
-class ViewController: UIViewController, UISearchBarDelegate {
+class ViewController: UIViewController, UISearchBarDelegate, MKMapViewDelegate {
     
     @IBOutlet var mapView: MKMapView!
     var city: String?
@@ -125,6 +125,10 @@ class ViewController: UIViewController, UISearchBarDelegate {
         let ac = UIAlertController(title: "Error", message: "City does not exist!", preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .cancel))
         present(ac, animated: true)
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
     }
 }
 

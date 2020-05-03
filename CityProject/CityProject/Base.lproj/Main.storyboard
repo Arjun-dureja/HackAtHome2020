@@ -53,7 +53,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Location" rowHeight="150" id="9q5-3S-P0z" customClass="LocationCell" customModule="CityProject" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Location" rowHeight="150" id="9q5-3S-P0z" customClass="LocationCell" customModule="CityProject" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9q5-3S-P0z" id="lNS-FX-rUN">
@@ -75,7 +75,7 @@
                                     <outlet property="mapView" destination="bdc-gX-MzJ" id="L1N-1l-AoZ"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Date" id="mSk-rs-PHF" customClass="DateCell" customModule="CityProject" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Date" id="mSk-rs-PHF" customClass="DateCell" customModule="CityProject" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="178" width="414" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mSk-rs-PHF" id="MxY-ZD-vFA">
@@ -109,28 +109,52 @@
                                     <outlet property="datePicker" destination="I2l-kb-ULl" id="Esr-5n-3MQ"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Picture" id="o58-DT-m4W" customClass="PictureCell" customModule="CityProject" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="378" width="414" height="200"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Picture" rowHeight="300" id="o58-DT-m4W" customClass="PictureCell" customModule="CityProject" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="378" width="414" height="300"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o58-DT-m4W" id="8ZR-Xo-JgA">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Rn-P8-voq">
-                                            <rect key="frame" x="132" y="25" width="150" height="150"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="150" id="uNq-CZ-ikx"/>
-                                            </constraints>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Rn-P8-voq">
+                                            <rect key="frame" x="70" y="13" width="275" height="275"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="7Rn-P8-voq" firstAttribute="centerX" secondItem="8ZR-Xo-JgA" secondAttribute="centerX" id="5vI-cX-XDU"/>
-                                        <constraint firstItem="7Rn-P8-voq" firstAttribute="centerY" secondItem="8ZR-Xo-JgA" secondAttribute="centerY" id="bPO-hd-YHB"/>
-                                        <constraint firstItem="7Rn-P8-voq" firstAttribute="top" secondItem="8ZR-Xo-JgA" secondAttribute="topMargin" constant="14" id="edf-Rb-gpM"/>
+                                        <constraint firstItem="7Rn-P8-voq" firstAttribute="centerY" secondItem="8ZR-Xo-JgA" secondAttribute="centerY" id="55A-HL-iji"/>
+                                        <constraint firstItem="7Rn-P8-voq" firstAttribute="leading" secondItem="8ZR-Xo-JgA" secondAttribute="leadingMargin" constant="50" id="Xet-pT-G48"/>
+                                        <constraint firstItem="7Rn-P8-voq" firstAttribute="centerX" secondItem="8ZR-Xo-JgA" secondAttribute="centerX" id="i52-Sx-1S2"/>
+                                        <constraint firstItem="7Rn-P8-voq" firstAttribute="top" secondItem="8ZR-Xo-JgA" secondAttribute="topMargin" constant="2" id="kUl-y6-CEE"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="picture" destination="7Rn-P8-voq" id="1SV-jN-SW8"/>
+                                    <outlet property="picture" destination="7Rn-P8-voq" id="t2E-jW-BRn"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Comments" id="TJR-b3-m72" customClass="CommentsCell" customModule="CityProject" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="678" width="414" height="200"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TJR-b3-m72" id="1td-gi-14L">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text=" " translatesAutoresizingMaskIntoConstraints="NO" id="Ook-vE-RQ3">
+                                            <rect key="frame" x="11" y="11" width="393" height="178"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Ook-vE-RQ3" firstAttribute="centerX" secondItem="1td-gi-14L" secondAttribute="centerX" id="B74-ui-05P"/>
+                                        <constraint firstItem="Ook-vE-RQ3" firstAttribute="bottom" secondItem="1td-gi-14L" secondAttribute="bottomMargin" id="SoR-Om-PPq"/>
+                                        <constraint firstItem="Ook-vE-RQ3" firstAttribute="top" secondItem="1td-gi-14L" secondAttribute="topMargin" id="a2L-Ap-dPB"/>
+                                        <constraint firstItem="Ook-vE-RQ3" firstAttribute="leading" secondItem="1td-gi-14L" secondAttribute="leadingMargin" constant="-9" id="ud1-ue-Kdb"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="comments" destination="Ook-vE-RQ3" id="fSb-7F-N5T"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

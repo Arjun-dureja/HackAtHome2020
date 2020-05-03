@@ -9,10 +9,11 @@
 import MapKit
 import UIKit
 
-class DetailViewController: UITableViewController {
+class DetailViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var city: String?
     var latitude: CLLocationDegrees?
     var longitude: CLLocationDegrees?
+    var picture: UIImage = UIImage.actions
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +28,17 @@ class DetailViewController: UITableViewController {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 4
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
+    }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 2 {
+            return 250
+        }
+        return 200
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -50,6 +57,9 @@ class DetailViewController: UITableViewController {
         }
         else if section == 2 {
             label.text = "Picture"
+        }
+        else if section == 3 {
+            label.text = "Comments"
         }
         
         view.addSubview(label)
@@ -81,14 +91,53 @@ class DetailViewController: UITableViewController {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "Date", for: indexPath) as? DateCell else {
                 fatalError("Unable to dequeue cell")
             }
+            
             cell.datePicker.maximumDate = Date()
             cell.datePicker.isUserInteractionEnabled = false
+            
             return cell
-        } else {
+        }
+        else if indexPath.section == 2 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "Picture", for: indexPath) as? PictureCell else {
                 fatalError("Unable to dequeue cell")
             }
+            
+            cell.picture.image = picture
+            cell.picture.layer.borderColor = UIColor.lightGray.cgColor
+            cell.picture.layer.borderWidth = 2
+            cell.picture.layer.cornerRadius = 10
+            return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "Comments", for: indexPath) as? CommentsCell else {
+                fatalError("Unable to dequeue cell")
+            }
+            cell.comments.layer.borderColor = UIColor.lightGray.cgColor
+            cell.comments.layer.borderWidth = 2
+            cell.comments.layer.cornerRadius = 10
+            cell.comments.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
             return cell
         }
+    }
+    
+    @objc func tapDone(sender: Any) {
+        self.view.endEditing(true)
+    } 
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 2 {
+            let picker = UIImagePickerController()
+            picker.delegate = self
+            picker.allowsEditing = true
+            present(picker, animated: true)
+            
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[.editedImage] as? UIImage else { return }
+        
+        dismiss(animated: true)
+        picture = image
+        tableView.reloadData()
     }
 }

@@ -18,6 +18,8 @@
 		728D063A245E32BC005C98D4 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728D0639245E32BC005C98D4 /* LocationCell.swift */; };
 		728D063C245E4A1B005C98D4 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728D063B245E4A1B005C98D4 /* DateCell.swift */; };
 		728D063E245E5D02005C98D4 /* PictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728D063D245E5D02005C98D4 /* PictureCell.swift */; };
+		728D0640245E69A2005C98D4 /* CommentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728D063F245E69A2005C98D4 /* CommentsCell.swift */; };
+		728D0642245E6F18005C98D4 /* CityAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728D0641245E6F18005C98D4 /* CityAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		728D0639245E32BC005C98D4 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		728D063B245E4A1B005C98D4 /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
 		728D063D245E5D02005C98D4 /* PictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCell.swift; sourceTree = "<group>"; };
+		728D063F245E69A2005C98D4 /* CommentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsCell.swift; sourceTree = "<group>"; };
+		728D0641245E6F18005C98D4 /* CityAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,12 +73,14 @@
 				728D0621245E0C2E005C98D4 /* AppDelegate.swift */,
 				728D0623245E0C2E005C98D4 /* SceneDelegate.swift */,
 				728D0625245E0C2E005C98D4 /* ViewController.swift */,
+				728D0641245E6F18005C98D4 /* CityAnnotation.swift */,
 				728D0637245E2AEE005C98D4 /* City.swift */,
 				728D0627245E0C2E005C98D4 /* Main.storyboard */,
 				728D063D245E5D02005C98D4 /* PictureCell.swift */,
 				728D063B245E4A1B005C98D4 /* DateCell.swift */,
 				728D0639245E32BC005C98D4 /* LocationCell.swift */,
 				728D0635245E21B4005C98D4 /* DetailViewController.swift */,
+				728D063F245E69A2005C98D4 /* CommentsCell.swift */,
 				728D062A245E0C30005C98D4 /* Assets.xcassets */,
 				728D062C245E0C30005C98D4 /* LaunchScreen.storyboard */,
 				728D062F245E0C30005C98D4 /* Info.plist */,
@@ -154,11 +160,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				728D063E245E5D02005C98D4 /* PictureCell.swift in Sources */,
+				728D0640245E69A2005C98D4 /* CommentsCell.swift in Sources */,
 				728D063A245E32BC005C98D4 /* LocationCell.swift in Sources */,
 				728D0626245E0C2E005C98D4 /* ViewController.swift in Sources */,
 				728D063C245E4A1B005C98D4 /* DateCell.swift in Sources */,
 				728D0638245E2AEE005C98D4 /* City.swift in Sources */,
 				728D0622245E0C2E005C98D4 /* AppDelegate.swift in Sources */,
+				728D0642245E6F18005C98D4 /* CityAnnotation.swift in Sources */,
 				728D0624245E0C2E005C98D4 /* SceneDelegate.swift in Sources */,
 				728D0636245E21B4005C98D4 /* DetailViewController.swift in Sources */,
 			);
