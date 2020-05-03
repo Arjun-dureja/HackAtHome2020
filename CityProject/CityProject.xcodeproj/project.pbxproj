@@ -25,7 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		728D061E245E0C2E005C98D4 /* CityProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		728D061E245E0C2E005C98D4 /* Land Mark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Land Mark.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		728D0621245E0C2E005C98D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		728D0623245E0C2E005C98D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		728D0625245E0C2E005C98D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 		728D061F245E0C2E005C98D4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				728D061E245E0C2E005C98D4 /* CityProject.app */,
+				728D061E245E0C2E005C98D4 /* Land Mark.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -111,7 +111,7 @@
 			);
 			name = CityProject;
 			productName = CityProject;
-			productReference = 728D061E245E0C2E005C98D4 /* CityProject.app */;
+			productReference = 728D061E245E0C2E005C98D4 /* Land Mark.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -328,7 +328,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.arjundureja.CityProject;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Land Mark";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -346,7 +346,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.arjundureja.CityProject;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Land Mark";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
