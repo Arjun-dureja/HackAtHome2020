@@ -72,9 +72,9 @@ class DetailViewController: UITableViewController, UIImagePickerControllerDelega
         let view = UIView()
         let label = UILabel(frame: CGRect(x: 15, y: 7, width: 200, height: 35))
         
-        label.font = UIFont.boldSystemFont(ofSize: 18)
-
-        view.backgroundColor = .systemPink
+        view.backgroundColor = .black
+        label.font = UIFont.boldSystemFont(ofSize: 22)
+        label.textColor = .systemPink
         
         if section == 0 {
             label.text = "Location"
@@ -132,10 +132,8 @@ class DetailViewController: UITableViewController, UIImagePickerControllerDelega
             }
             
             let path = getDocumentsDirectory().appendingPathComponent(cityData[currentCityIndex].picture)
-            cell.picture.image = UIImage(contentsOfFile: path.path)
-            
-            cell.picture.layer.borderColor = UIColor.lightGray.cgColor
-            cell.picture.layer.borderWidth = 2
+            cell.picture.image = UIImage(contentsOfFile: path.path) ?? UIImage(named: "placeholder")
+
             cell.picture.layer.cornerRadius = 10
             return cell
         } else {
@@ -143,9 +141,8 @@ class DetailViewController: UITableViewController, UIImagePickerControllerDelega
                 fatalError("Unable to dequeue cell")
             }
             cell.delegate = self
+            cell.comments.backgroundColor = .white
             cell.comments.text = cityData[currentCityIndex].comments
-            cell.comments.layer.borderColor = UIColor.lightGray.cgColor
-            cell.comments.layer.borderWidth = 2
             cell.comments.layer.cornerRadius = 10
             return cell
         }

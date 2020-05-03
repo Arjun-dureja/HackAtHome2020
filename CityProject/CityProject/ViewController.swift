@@ -20,7 +20,7 @@ class ViewController: UIViewController, UISearchBarDelegate, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Visited Cities"
+        title = "Land Mark"
         mapView.layer.cornerRadius = 10
         
         let urlString = "https://raw.githubusercontent.com/lutangar/cities.json/master/cities.json"
@@ -178,7 +178,7 @@ class ViewController: UIViewController, UISearchBarDelegate, MKMapViewDelegate {
         ac.addAction(UIAlertAction(title: "Details", style: .default, handler: {
             [weak self] _ in
             guard let vc = self?.storyboard?.instantiateViewController(identifier: "Detail") as? DetailViewController else { return }
-            vc.title = city.title
+            vc.city = city.title
             vc.latitude = city.coordinate.latitude
             vc.longitude = city.coordinate.longitude
             

@@ -68,10 +68,10 @@
                                         </mapView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="bdc-gX-MzJ" firstAttribute="trailing" secondItem="lNS-FX-rUN" secondAttribute="trailingMargin" id="IyC-ry-JgY"/>
-                                        <constraint firstItem="bdc-gX-MzJ" firstAttribute="top" secondItem="lNS-FX-rUN" secondAttribute="topMargin" id="dLA-1t-7nw"/>
-                                        <constraint firstItem="bdc-gX-MzJ" firstAttribute="bottom" secondItem="lNS-FX-rUN" secondAttribute="bottomMargin" id="lMC-Nu-6pH"/>
-                                        <constraint firstItem="bdc-gX-MzJ" firstAttribute="leading" secondItem="lNS-FX-rUN" secondAttribute="leadingMargin" id="laU-aB-DOf"/>
+                                        <constraint firstItem="bdc-gX-MzJ" firstAttribute="bottom" secondItem="lNS-FX-rUN" secondAttribute="bottomMargin" id="YKH-bc-DyI"/>
+                                        <constraint firstItem="bdc-gX-MzJ" firstAttribute="trailing" secondItem="lNS-FX-rUN" secondAttribute="trailingMargin" id="lvl-2U-aFI"/>
+                                        <constraint firstItem="bdc-gX-MzJ" firstAttribute="top" secondItem="lNS-FX-rUN" secondAttribute="topMargin" id="pYS-av-s9z"/>
+                                        <constraint firstItem="bdc-gX-MzJ" firstAttribute="leading" secondItem="lNS-FX-rUN" secondAttribute="leadingMargin" id="vhC-7M-FBF"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -120,14 +120,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Rn-P8-voq">
-                                            <rect key="frame" x="70" y="13" width="275" height="275"/>
+                                            <rect key="frame" x="20" y="13" width="374" height="275"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="7Rn-P8-voq" firstAttribute="centerY" secondItem="8ZR-Xo-JgA" secondAttribute="centerY" id="55A-HL-iji"/>
-                                        <constraint firstItem="7Rn-P8-voq" firstAttribute="leading" secondItem="8ZR-Xo-JgA" secondAttribute="leadingMargin" constant="50" id="Xet-pT-G48"/>
-                                        <constraint firstItem="7Rn-P8-voq" firstAttribute="centerX" secondItem="8ZR-Xo-JgA" secondAttribute="centerX" id="i52-Sx-1S2"/>
-                                        <constraint firstItem="7Rn-P8-voq" firstAttribute="top" secondItem="8ZR-Xo-JgA" secondAttribute="topMargin" constant="2" id="kUl-y6-CEE"/>
+                                        <constraint firstItem="7Rn-P8-voq" firstAttribute="trailing" secondItem="8ZR-Xo-JgA" secondAttribute="trailingMargin" id="DdM-mA-nok"/>
+                                        <constraint firstItem="7Rn-P8-voq" firstAttribute="centerY" secondItem="8ZR-Xo-JgA" secondAttribute="centerY" id="RNi-mw-YtP"/>
+                                        <constraint firstItem="7Rn-P8-voq" firstAttribute="top" secondItem="8ZR-Xo-JgA" secondAttribute="topMargin" constant="2" id="daV-GU-fAp"/>
+                                        <constraint firstItem="7Rn-P8-voq" firstAttribute="leading" secondItem="8ZR-Xo-JgA" secondAttribute="leadingMargin" id="pIU-uH-qy1"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -141,11 +141,12 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text=" " translatesAutoresizingMaskIntoConstraints="NO" id="Ook-vE-RQ3">
-                                            <rect key="frame" x="11" y="39" width="393" height="150"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                            <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text=" " translatesAutoresizingMaskIntoConstraints="NO" id="Ook-vE-RQ3">
+                                            <rect key="frame" x="20" y="39" width="374" height="150"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzT-86-LJ8">
@@ -157,12 +158,12 @@
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Ook-vE-RQ3" firstAttribute="top" secondItem="wzT-86-LJ8" secondAttribute="bottom" constant="8" id="4v2-OZ-HSd"/>
-                                        <constraint firstItem="Ook-vE-RQ3" firstAttribute="leading" secondItem="1td-gi-14L" secondAttribute="leadingMargin" constant="-9" id="Bcx-1h-iJj"/>
-                                        <constraint firstItem="Ook-vE-RQ3" firstAttribute="bottom" secondItem="1td-gi-14L" secondAttribute="bottomMargin" id="tXe-54-ICg"/>
-                                        <constraint firstItem="Ook-vE-RQ3" firstAttribute="centerX" secondItem="1td-gi-14L" secondAttribute="centerX" id="u46-b7-af4"/>
-                                        <constraint firstItem="wzT-86-LJ8" firstAttribute="top" secondItem="1td-gi-14L" secondAttribute="topMargin" constant="-10" id="xY1-d8-aYY"/>
-                                        <constraint firstItem="wzT-86-LJ8" firstAttribute="trailing" secondItem="1td-gi-14L" secondAttribute="trailingMargin" id="yrp-LO-ES3"/>
+                                        <constraint firstItem="Ook-vE-RQ3" firstAttribute="bottom" secondItem="1td-gi-14L" secondAttribute="bottomMargin" id="Bvi-1Z-sgI"/>
+                                        <constraint firstItem="wzT-86-LJ8" firstAttribute="trailing" secondItem="1td-gi-14L" secondAttribute="trailingMargin" id="RR8-8k-XPf"/>
+                                        <constraint firstItem="wzT-86-LJ8" firstAttribute="trailing" secondItem="Ook-vE-RQ3" secondAttribute="trailing" id="YRc-YU-MY1"/>
+                                        <constraint firstItem="Ook-vE-RQ3" firstAttribute="leading" secondItem="1td-gi-14L" secondAttribute="leadingMargin" id="ZAa-e1-W6x"/>
+                                        <constraint firstItem="Ook-vE-RQ3" firstAttribute="top" secondItem="wzT-86-LJ8" secondAttribute="bottom" constant="8" id="flw-qf-Wiy"/>
+                                        <constraint firstItem="wzT-86-LJ8" firstAttribute="top" secondItem="1td-gi-14L" secondAttribute="topMargin" constant="-10" id="mTV-7K-EqD"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
