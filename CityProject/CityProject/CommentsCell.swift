@@ -8,9 +8,17 @@
 
 import UIKit
 
+protocol CommentsCellDelegate {
+    func didTapSave(comment: String?)
+}
+
 class CommentsCell: UITableViewCell {
     @IBOutlet var comments: UITextView!
-
+    var delegate: CommentsCellDelegate?
+    
+    @IBAction func saveTapped(_ sender: Any) {
+        delegate?.didTapSave(comment: comments.text)
+    }
 }
 
 extension UITextView {

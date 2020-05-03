@@ -14,6 +14,10 @@ class DetailViewController: UITableViewController, UIImagePickerControllerDelega
     var latitude: CLLocationDegrees?
     var longitude: CLLocationDegrees?
     var picture: UIImage = UIImage.actions
+    var date: Date!
+    var comments: String!
+    var cityData = [CityData]()
+    var currentCityIndex: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +25,29 @@ class DetailViewController: UITableViewController, UIImagePickerControllerDelega
         if let city = city {
             title = city
         }
+        
+        let defaults = UserDefaults.standard
+        
+        if let savedData = defaults.object(forKey: "Data") as? Data {
+            let jsonDecoder = JSONDecoder()
+            
+            do {
+                cityData = try jsonDecoder.decode([CityData].self, from: savedData)
+            } catch {
+                print("Failed")
+            }
+        }
+    
+        for i in 0..<cityData.count {
+            if cityData[i].title == self.title {
+                currentCityIndex = i
+                return
+            }
+        }
+        
+        let newCity = CityData(title: self.title!, date: Date(), picture: "", comments: "")
+        cityData.append(newCity)
+        currentCityIndex = cityData.count - 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -92,6 +119,8 @@ class DetailViewController: UITableViewController, UIImagePickerControllerDelega
                 fatalError("Unable to dequeue cell")
             }
             
+            cell.delegate = self
+            cell.datePicker.date = cityData[currentCityIndex].date
             cell.datePicker.maximumDate = Date()
             cell.datePicker.isUserInteractionEnabled = false
             
@@ -102,7 +131,9 @@ class DetailViewController: UITableViewController, UIImagePickerControllerDelega
                 fatalError("Unable to dequeue cell")
             }
             
-            cell.picture.image = picture
+            let path = getDocumentsDirectory().appendingPathComponent(cityData[currentCityIndex].picture)
+            cell.picture.image = UIImage(contentsOfFile: path.path)
+            
             cell.picture.layer.borderColor = UIColor.lightGray.cgColor
             cell.picture.layer.borderWidth = 2
             cell.picture.layer.cornerRadius = 10
@@ -111,17 +142,15 @@ class DetailViewController: UITableViewController, UIImagePickerControllerDelega
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "Comments", for: indexPath) as? CommentsCell else {
                 fatalError("Unable to dequeue cell")
             }
+            cell.delegate = self
+            cell.comments.text = cityData[currentCityIndex].comments
             cell.comments.layer.borderColor = UIColor.lightGray.cgColor
             cell.comments.layer.borderWidth = 2
             cell.comments.layer.cornerRadius = 10
-            cell.comments.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
             return cell
         }
     }
     
-    @objc func tapDone(sender: Any) {
-        self.view.endEditing(true)
-    } 
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 2 {
@@ -129,15 +158,58 @@ class DetailViewController: UITableViewController, UIImagePickerControllerDelega
             picker.delegate = self
             picker.allowsEditing = true
             present(picker, animated: true)
-            
         }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.editedImage] as? UIImage else { return }
         
+        let imageName = UUID().uuidString
+        let imagePath = getDocumentsDirectory().appendingPathComponent(imageName)
+        
+        if let jpegData = image.jpegData(compressionQuality: 0.8) {
+            try? jpegData.write(to: imagePath)
+        }
+        
+        cityData[currentCityIndex].picture = imageName
+        save()
+        
         dismiss(animated: true)
-        picture = image
         tableView.reloadData()
+    }
+    
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
+    func save() {
+        let jsonEncoder = JSONEncoder()
+        
+        if let savedData = try? jsonEncoder.encode(cityData) {
+            let defaults = UserDefaults.standard
+            defaults.set(savedData, forKey: "Data")
+        } else {
+            print("Failed to save")
+        }
+    }
+}
+
+extension DetailViewController: DateCellDelegate {
+    func didTapSave(date: Date) {
+        self.date = date
+        self.cityData[currentCityIndex].date = date
+        self.save()
+    }
+}
+
+extension DetailViewController: CommentsCellDelegate {
+    func didTapSave(comment: String?) {
+        if let comment = comment {
+            self.comments = comment
+            self.cityData[currentCityIndex].comments = comment
+            self.view.endEditing(true)
+            self.save()
+        }
     }
 }

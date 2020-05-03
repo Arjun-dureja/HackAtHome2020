@@ -17,6 +17,9 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eFx-Zd-Qri">
                                 <rect key="frame" x="0.0" y="140" width="414" height="756"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="KNb-5R-cnr"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -139,18 +142,27 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text=" " translatesAutoresizingMaskIntoConstraints="NO" id="Ook-vE-RQ3">
-                                            <rect key="frame" x="11" y="11" width="393" height="178"/>
+                                            <rect key="frame" x="11" y="39" width="393" height="150"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzT-86-LJ8">
+                                            <rect key="frame" x="360" y="1" width="34" height="30"/>
+                                            <state key="normal" title="Save"/>
+                                            <connections>
+                                                <action selector="saveTapped:" destination="TJR-b3-m72" eventType="touchUpInside" id="bM1-Nn-mlQ"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Ook-vE-RQ3" firstAttribute="centerX" secondItem="1td-gi-14L" secondAttribute="centerX" id="B74-ui-05P"/>
-                                        <constraint firstItem="Ook-vE-RQ3" firstAttribute="bottom" secondItem="1td-gi-14L" secondAttribute="bottomMargin" id="SoR-Om-PPq"/>
-                                        <constraint firstItem="Ook-vE-RQ3" firstAttribute="top" secondItem="1td-gi-14L" secondAttribute="topMargin" id="a2L-Ap-dPB"/>
-                                        <constraint firstItem="Ook-vE-RQ3" firstAttribute="leading" secondItem="1td-gi-14L" secondAttribute="leadingMargin" constant="-9" id="ud1-ue-Kdb"/>
+                                        <constraint firstItem="Ook-vE-RQ3" firstAttribute="top" secondItem="wzT-86-LJ8" secondAttribute="bottom" constant="8" id="4v2-OZ-HSd"/>
+                                        <constraint firstItem="Ook-vE-RQ3" firstAttribute="leading" secondItem="1td-gi-14L" secondAttribute="leadingMargin" constant="-9" id="Bcx-1h-iJj"/>
+                                        <constraint firstItem="Ook-vE-RQ3" firstAttribute="bottom" secondItem="1td-gi-14L" secondAttribute="bottomMargin" id="tXe-54-ICg"/>
+                                        <constraint firstItem="Ook-vE-RQ3" firstAttribute="centerX" secondItem="1td-gi-14L" secondAttribute="centerX" id="u46-b7-af4"/>
+                                        <constraint firstItem="wzT-86-LJ8" firstAttribute="top" secondItem="1td-gi-14L" secondAttribute="topMargin" constant="-10" id="xY1-d8-aYY"/>
+                                        <constraint firstItem="wzT-86-LJ8" firstAttribute="trailing" secondItem="1td-gi-14L" secondAttribute="trailingMargin" id="yrp-LO-ES3"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
